@@ -20,11 +20,7 @@
 #include <type_traits>
 
 
-namespace iron {
-  // C++14 enable_if_t helper type
-	template <bool B, typename V = void> using enable_if_t = typename std::enable_if<B, V>::type;
-  
-  
+namespace iron {  
   //////////////////////////
   // Integral type traits //
   //////////////////////////
@@ -117,18 +113,18 @@ namespace iron {
   struct smallest_integer<
     low,
     high,
-    enable_if_t<(low < 0) && (high <= iron::std::numeric_limits<intmax_t>::max())>
+    std::enable_if_t<(low < 0) && (high <= static_cast<uintmax_t>(std::numeric_limits<intmax_t>::max()))>
   > {
     static const int low_min_width =
-      low >= iron::std::numeric_limits<int8_t>::min()  ? 8  :
-      low >= iron::std::numeric_limits<int16_t>::min() ? 16 :
-      low >= iron::std::numeric_limits<int32_t>::min() ? 32 :
+      low >= std::numeric_limits<int8_t>::min()  ? 8  :
+      low >= std::numeric_limits<int16_t>::min() ? 16 :
+      low >= std::numeric_limits<int32_t>::min() ? 32 :
                                                   64;
     
     static const int high_min_width =
-      high <= iron::std::numeric_limits<int8_t>::max()  ? 8  :
-      high <= iron::std::numeric_limits<int16_t>::max() ? 16 :
-      high <= iron::std::numeric_limits<int32_t>::max() ? 32 :
+      high <= std::numeric_limits<int8_t>::max()  ? 8  :
+      high <= std::numeric_limits<int16_t>::max() ? 16 :
+      high <= std::numeric_limits<int32_t>::max() ? 32 :
                                                    64;
     
     using type = width_as_integer_t<high_min_width >= low_min_width ? high_min_width : low_min_width>;
@@ -136,11 +132,11 @@ namespace iron {
 
   // if `low` is >= `0`, `::type` should be the smallest unsigned type in which `high` will fit
   template <intmax_t low, uintmax_t high>
-  struct smallest_integer<low, high, enable_if_t<(low >= 0)>> {
+  struct smallest_integer<low, high, std::enable_if_t<(low >= 0)>> {
     static const int high_min_width =
-      high <= iron::std::numeric_limits<uint8_t>::max()  ? 8  :
-      high <= iron::std::numeric_limits<uint16_t>::max() ? 16 :
-      high <= iron::std::numeric_limits<uint32_t>::max() ? 32 :
+      high <= std::numeric_limits<uint8_t>::max()  ? 8  :
+      high <= std::numeric_limits<uint16_t>::max() ? 16 :
+      high <= std::numeric_limits<uint32_t>::max() ? 32 :
                                                     64;
     
     using type = width_as_uinteger_t<high_min_width>;
