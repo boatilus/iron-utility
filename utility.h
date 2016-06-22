@@ -1,24 +1,23 @@
 /*
-CC0 1.0 Universal (CC0 1.0)
-Public Domain Dedication
+  CC0 1.0 Universal (CC0 1.0)
+  Public Domain Dedication
 
-The person who associated a work with this deed has dedicated the work to the public domain by
-waiving all of his or her rights to the work worldwide under copyright law, including all related
-and neighboring rights, to the extent allowed by law.
+  The person who associated a work with this deed has dedicated the work to the public domain by
+  waiving all of his or her rights to the work worldwide under copyright law, including all related
+  and neighboring rights, to the extent allowed by law.
 
-You can copy, modify, distribute and perform the work, even for commercial purposes, all without
-asking permission.
+  You can copy, modify, distribute and perform the work, even for commercial purposes, all without
+  asking permission.
 
-https://creativecommons.org/publicdomain/zero/1.0/
+  https://creativecommons.org/publicdomain/zero/1.0/
 */
 
 
 #pragma once
 
-#include <string>
+#include <cstdint>
+#include <limits>
 #include <type_traits>
-
-#include "limits.h"
 
 
 namespace iron {
@@ -55,8 +54,8 @@ namespace iron {
 	template <typename T, typename U>
 	struct has_eq_or_greater_range {
 		static const bool value {
-			   numeric_limits<T>::min <= numeric_limits<U>::min
-			&& numeric_limits<T>::max >= numeric_limits<U>::max
+			   std::numeric_limits<T>::min() <= std::numeric_limits<U>::min()
+			&& std::numeric_limits<T>::max() >= std::numeric_limits<U>::max()
 		};
 	};
 
@@ -64,8 +63,8 @@ namespace iron {
   template <typename T, typename U>
 	struct has_equivalent_range {
 		static const bool value {
-			   numeric_limits<T>::min <= numeric_limits<U>::min
-			&& numeric_limits<T>::max >= numeric_limits<U>::max
+			   std::numeric_limits<T>::min() <= std::numeric_limits<U>::min()
+			&& std::numeric_limits<T>::max() >= std::numeric_limits<U>::max()
 		};
 	};
   
@@ -118,18 +117,18 @@ namespace iron {
   struct smallest_integer<
     low,
     high,
-    enable_if_t<(low < 0) && (high <= iron::numeric_limits<intmax_t>::max)>
+    enable_if_t<(low < 0) && (high <= iron::std::numeric_limits<intmax_t>::max())>
   > {
     static const int low_min_width =
-      low >= iron::numeric_limits<int8_t>::min  ? 8  :
-      low >= iron::numeric_limits<int16_t>::min ? 16 :
-      low >= iron::numeric_limits<int32_t>::min ? 32 :
+      low >= iron::std::numeric_limits<int8_t>::min()  ? 8  :
+      low >= iron::std::numeric_limits<int16_t>::min() ? 16 :
+      low >= iron::std::numeric_limits<int32_t>::min() ? 32 :
                                                   64;
     
     static const int high_min_width =
-      high <= iron::numeric_limits<int8_t>::max  ? 8  :
-      high <= iron::numeric_limits<int16_t>::max ? 16 :
-      high <= iron::numeric_limits<int32_t>::max ? 32 :
+      high <= iron::std::numeric_limits<int8_t>::max()  ? 8  :
+      high <= iron::std::numeric_limits<int16_t>::max() ? 16 :
+      high <= iron::std::numeric_limits<int32_t>::max() ? 32 :
                                                    64;
     
     using type = width_as_integer_t<high_min_width >= low_min_width ? high_min_width : low_min_width>;
@@ -139,9 +138,9 @@ namespace iron {
   template <intmax_t low, uintmax_t high>
   struct smallest_integer<low, high, enable_if_t<(low >= 0)>> {
     static const int high_min_width =
-      high <= iron::numeric_limits<uint8_t>::max  ? 8  :
-      high <= iron::numeric_limits<uint16_t>::max ? 16 :
-      high <= iron::numeric_limits<uint32_t>::max ? 32 :
+      high <= iron::std::numeric_limits<uint8_t>::max()  ? 8  :
+      high <= iron::std::numeric_limits<uint16_t>::max() ? 16 :
+      high <= iron::std::numeric_limits<uint32_t>::max() ? 32 :
                                                     64;
     
     using type = width_as_uinteger_t<high_min_width>;
