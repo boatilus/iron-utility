@@ -119,13 +119,13 @@ namespace iron {
       low >= std::numeric_limits<int8_t>::min()  ? 8  :
       low >= std::numeric_limits<int16_t>::min() ? 16 :
       low >= std::numeric_limits<int32_t>::min() ? 32 :
-                                                  64;
+                                                   64;
     
     static const int high_min_width =
       high <= std::numeric_limits<int8_t>::max()  ? 8  :
       high <= std::numeric_limits<int16_t>::max() ? 16 :
       high <= std::numeric_limits<int32_t>::max() ? 32 :
-                                                   64;
+                                                    64;
     
     using type = width_as_integer_t<high_min_width >= low_min_width ? high_min_width : low_min_width>;
   };
@@ -137,7 +137,7 @@ namespace iron {
       high <= std::numeric_limits<uint8_t>::max()  ? 8  :
       high <= std::numeric_limits<uint16_t>::max() ? 16 :
       high <= std::numeric_limits<uint32_t>::max() ? 32 :
-                                                    64;
+                                                     64;
     
     using type = width_as_uinteger_t<high_min_width>;
   };
