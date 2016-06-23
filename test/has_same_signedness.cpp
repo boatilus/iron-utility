@@ -21,6 +21,7 @@ TEST_CASE("has_samed_signedness returns true for same-signed ints") {
   REQUIRE(true == (has_same_signedness<int64_t, int16_t>::value));
   REQUIRE(true == (has_same_signedness<int64_t, int32_t>::value));
   REQUIRE(true == (has_same_signedness<int64_t, int64_t>::value));
+
   REQUIRE(true == (has_same_signedness<uint8_t, uint8_t>::value));
   REQUIRE(true == (has_same_signedness<uint8_t, uint16_t>::value));
   REQUIRE(true == (has_same_signedness<uint8_t, uint32_t>::value));
@@ -58,6 +59,7 @@ TEST_CASE("has_samed_signedness returns false for differently-signed ints") {
   REQUIRE(false == (has_same_signedness<int64_t, uint16_t>::value));
   REQUIRE(false == (has_same_signedness<int64_t, uint32_t>::value));
   REQUIRE(false == (has_same_signedness<int64_t, uint64_t>::value));
+
   REQUIRE(false == (has_same_signedness<uint8_t, int8_t>::value));
   REQUIRE(false == (has_same_signedness<uint8_t, int16_t>::value));
   REQUIRE(false == (has_same_signedness<uint8_t, int32_t>::value));

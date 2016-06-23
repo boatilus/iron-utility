@@ -273,11 +273,14 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="test\utility.h" />
+    <ClInclude Include="lib\catch.h" />
     <ClInclude Include="utility.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="test\has_eq_or_greater_range.cpp" />
+    <ClCompile Include="test\has_same_signedness.cpp" />
+    <ClCompile Include="test\is_integral_like.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
