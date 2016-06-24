@@ -281,6 +281,8 @@
     <ClCompile Include="test\has_eq_or_greater_range.cpp" />
     <ClCompile Include="test\has_same_signedness.cpp" />
     <ClCompile Include="test\is_integral_like.cpp" />
+    <ClCompile Include="test\safe_to_int.cpp" />
+    <ClCompile Include="test\smallest_integer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

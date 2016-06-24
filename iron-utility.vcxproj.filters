@@ -43,5 +43,11 @@
     <ClCompile Include="test\has_eq_or_greater_range.cpp">
       <Filter>Test Files</Filter>
     </ClCompile>
+    <ClCompile Include="test\safe_to_int.cpp">
+      <Filter>Test Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\smallest_integer.cpp">
+      <Filter>Test Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
