@@ -68,7 +68,7 @@ namespace iron {
   // Given an integral `width` (number of bits), return the associated integer type with the
   // width equal to `width`
   template <int width> struct width_as_integer;
-  template <> struct width_as_integer<8> { using type = int8_t; };
+  template <> struct width_as_integer<8>  { using type = int8_t; };
   template <> struct width_as_integer<16> { using type = int16_t; };
   template <> struct width_as_integer<32> { using type = int32_t; };
   template <> struct width_as_integer<64> { using type = int64_t; };
@@ -76,7 +76,7 @@ namespace iron {
   // Given an integral `width` (number of bits), return the associated unsigned integer type with the
   // width equal to `width`
   template <int width> struct width_as_uinteger;
-  template <> struct width_as_uinteger<8> { using type = uint8_t; };
+  template <> struct width_as_uinteger<8>  { using type = uint8_t; };
   template <> struct width_as_uinteger<16> { using type = uint16_t; };
   template <> struct width_as_uinteger<32> { using type = uint32_t; };
   template <> struct width_as_uinteger<64> { using type = uint64_t; };
@@ -240,6 +240,10 @@ namespace iron {
     static const bool value { std::is_floating_point<T>::value && all_floating_point<Ts...>::value };
   };
   
+  
+  //////////////////////////////
+  // enable_if shortcut types //
+  //////////////////////////////
 
   template <typename T, typename V = void>
   using is_pointer_t = typename std::enable_if<std::is_pointer<T>::value, V>::type;

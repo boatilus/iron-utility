@@ -71,3 +71,30 @@ TEST_CASE("all_floating_point type trait has false value if any/all non-arithmet
   REQUIRE(!(iron::all_unsigned<float, char*>::value));
   REQUIRE(!(iron::all_integral<char*, std::function<char>>::value));
 }
+
+TEST_CASE("is_pointer_t functions correctly") {
+  REQUIRE((std::is_same<void, iron::is_pointer_t<char*>>::value));
+}
+
+TEST_CASE("is_class_t functions correctly") {
+  class t;
+
+  REQUIRE((std::is_same<void, iron::is_class_t<t>>::value));
+}
+
+TEST_CASE("is_integral_t functions correctly") {
+  REQUIRE((std::is_same<void, iron::is_integral_t<int>>::value));
+}
+
+TEST_CASE("is_signed_t functions correctly") {
+  REQUIRE((std::is_same<void, iron::is_signed_t<int>>::value));
+}
+
+TEST_CASE("is_unsigned_t functions correctly") {
+  REQUIRE((std::is_same<void, iron::is_unsigned_t<unsigned int>>::value));
+}
+
+TEST_CASE("make_unsigned_t functions correctly") {
+  REQUIRE((std::is_same<uint8_t, iron::make_unsigned_t<int8_t>>::value));
+  REQUIRE((std::is_same<uint16_t, iron::make_unsigned_t<int16_t>>::value));
+}

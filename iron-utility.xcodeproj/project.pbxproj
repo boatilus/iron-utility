@@ -15,7 +15,7 @@
 		E488DF131D21FE6F00243A4D /* smallest_integer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E488DF111D21FE6F00243A4D /* smallest_integer.cpp */; };
 		E488DF141D21FE6F00243A4D /* width_as_integer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E488DF121D21FE6F00243A4D /* width_as_integer.cpp */; };
 		E488DF161D2200E900243A4D /* has_char_traits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E488DF151D2200E900243A4D /* has_char_traits.cpp */; };
-		E488DF181D22030F00243A4D /* is_arithmetic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E488DF171D22030F00243A4D /* is_arithmetic.cpp */; };
+		E488DF181D22030F00243A4D /* traits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E488DF171D22030F00243A4D /* traits.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,7 +42,7 @@
 		E488DF111D21FE6F00243A4D /* smallest_integer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = smallest_integer.cpp; path = test/smallest_integer.cpp; sourceTree = "<group>"; };
 		E488DF121D21FE6F00243A4D /* width_as_integer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = width_as_integer.cpp; path = test/width_as_integer.cpp; sourceTree = "<group>"; };
 		E488DF151D2200E900243A4D /* has_char_traits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = has_char_traits.cpp; path = test/has_char_traits.cpp; sourceTree = "<group>"; };
-		E488DF171D22030F00243A4D /* is_arithmetic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = is_arithmetic.cpp; path = test/is_arithmetic.cpp; sourceTree = "<group>"; };
+		E488DF171D22030F00243A4D /* traits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = traits.cpp; path = test/traits.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 				E488DF0B1D21FE4100243A4D /* is_integral_like.cpp */,
 				E436FD721D1B8E0800D2B0F2 /* has_same_signedness.cpp */,
 				E488DF151D2200E900243A4D /* has_char_traits.cpp */,
-				E488DF171D22030F00243A4D /* is_arithmetic.cpp */,
+				E488DF171D22030F00243A4D /* traits.cpp */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -163,7 +163,7 @@
 				E488DF141D21FE6F00243A4D /* width_as_integer.cpp in Sources */,
 				E488DF101D21FE6200243A4D /* safe_to_int.cpp in Sources */,
 				E436FD731D1B8E0800D2B0F2 /* has_same_signedness.cpp in Sources */,
-				E488DF181D22030F00243A4D /* is_arithmetic.cpp in Sources */,
+				E488DF181D22030F00243A4D /* traits.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
