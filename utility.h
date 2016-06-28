@@ -115,17 +115,17 @@ namespace iron {
     high,
     std::enable_if_t<(low < 0) && (high <= static_cast<uintmax_t>(std::numeric_limits<intmax_t>::max()))>
   > {
-    static const int low_min_width =
+    static const int low_min_width {
       low >= std::numeric_limits<int8_t>::min()  ? 8  :
       low >= std::numeric_limits<int16_t>::min() ? 16 :
       low >= std::numeric_limits<int32_t>::min() ? 32 :
-                                                   64;
+                                                   64 };
     
-    static const int high_min_width =
+    static const int high_min_width {
       high <= std::numeric_limits<int8_t>::max()  ? 8  :
       high <= std::numeric_limits<int16_t>::max() ? 16 :
       high <= std::numeric_limits<int32_t>::max() ? 32 :
-                                                    64;
+                                                    64 };
     
     using type = width_as_integer_t<high_min_width >= low_min_width ? high_min_width : low_min_width>;
   };
@@ -133,11 +133,11 @@ namespace iron {
   // if `low` is >= `0`, `::type` should be the smallest unsigned type in which `high` will fit
   template <intmax_t low, uintmax_t high>
   struct smallest_integer<low, high, std::enable_if_t<(low >= 0)>> {
-    static const int high_min_width =
+    static const int high_min_width {
       high <= std::numeric_limits<uint8_t>::max()  ? 8  :
       high <= std::numeric_limits<uint16_t>::max() ? 16 :
       high <= std::numeric_limits<uint32_t>::max() ? 32 :
-                                                     64;
+                                                     64 };
     
     using type = width_as_uinteger_t<high_min_width>;
   };
@@ -185,11 +185,11 @@ namespace iron {
   struct all_arithmetic;
   
   template <typename T>
-  struct all_arithmetic<T> { static const auto value = std::is_arithmetic<T>::value; };
+  struct all_arithmetic<T> { static const auto value { std::is_arithmetic<T>::value }; };
 
   template <typename T, typename... Ts>
   struct all_arithmetic<T, Ts...> {
-    static const auto value = std::is_arithmetic<T>::value && all_arithmetic<Ts...>::value;
+    static const auto value { std::is_arithmetic<T>::value && all_arithmetic<Ts...>::value };
   };
   
   
@@ -197,11 +197,11 @@ namespace iron {
   struct all_integral;
   
   template <typename T>
-  struct all_integral<T> { static const auto value = std::is_integral<T>::value; };
+  struct all_integral<T> { static const auto value { std::is_integral<T>::value }; };
 
   template <typename T, typename... Ts>
   struct all_integral<T, Ts...> {
-    static const auto value = std::is_integral<T>::value && all_integral<Ts...>::value;
+    static const auto value { std::is_integral<T>::value && all_integral<Ts...>::value };
   };
   
 
@@ -209,11 +209,11 @@ namespace iron {
   struct all_signed;
   
   template <typename T>
-  struct all_signed<T> { static const auto value = std::is_signed<T>::value; };
+  struct all_signed<T> { static const auto value { std::is_signed<T>::value }; };
 
   template <typename T, typename... Ts>
   struct all_signed<T, Ts...> {
-    static const auto value = std::is_signed<T>::value && all_signed<Ts...>::value;
+    static const auto value { std::is_signed<T>::value && all_signed<Ts...>::value };
   };
   
   
@@ -221,11 +221,11 @@ namespace iron {
   struct all_unsigned;
   
   template <typename T>
-  struct all_unsigned<T> { static const bool value = std::is_unsigned<T>::value; };
+  struct all_unsigned<T> { static const bool value { std::is_unsigned<T>::value }; };
 
   template <typename T, typename... Ts>
   struct all_unsigned<T, Ts...> {
-    static const bool value = std::is_unsigned<T>::value && all_unsigned<Ts...>::value;
+    static const bool value { std::is_unsigned<T>::value && all_unsigned<Ts...>::value };
   };
   
   
@@ -233,11 +233,11 @@ namespace iron {
   struct all_floating_point;
   
   template <typename T>
-  struct all_floating_point<T> { static const bool value = std::is_floating_point<T>::value; };
+  struct all_floating_point<T> { static const bool value { std::is_floating_point<T>::value }; };
 
   template <typename T, typename... Ts>
   struct all_floating_point<T, Ts...> {
-    static const bool value = std::is_floating_point<T>::value && all_floating_point<Ts...>::value;
+    static const bool value { std::is_floating_point<T>::value && all_floating_point<Ts...>::value };
   };
   
 
