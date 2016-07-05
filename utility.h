@@ -26,7 +26,7 @@ namespace iron {
   //////////////////////////
 
 	template <typename T, typename U>
-	struct has_same_signedness {
+	struct have_same_signedness {
 		static const bool value {
 			   (std::is_signed<T>::value && std::is_signed<U>::value)
 	    || (std::is_unsigned<T>::value && std::is_unsigned<U>::value)
