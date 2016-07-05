@@ -34,15 +34,15 @@ namespace iron {
 	};
 
 
-  template <typename T> struct is_integral_like { static const bool value { false }; };
-  template <> struct is_integral_like<int8_t>   { static const bool value { true }; };
-  template <> struct is_integral_like<int16_t>  { static const bool value { true }; };
-  template <> struct is_integral_like<int32_t>  { static const bool value { true }; };
-  template <> struct is_integral_like<int64_t>  { static const bool value { true }; };
-  template <> struct is_integral_like<uint8_t>  { static const bool value { true }; };
-  template <> struct is_integral_like<uint16_t> { static const bool value { true }; };
-  template <> struct is_integral_like<uint32_t> { static const bool value { true }; };
-  template <> struct is_integral_like<uint64_t> { static const bool value { true }; };
+  template <typename T> struct is_integer_like { static const bool value { false }; };
+  template <> struct is_integer_like<int8_t>   { static const bool value { true }; };
+  template <> struct is_integer_like<int16_t>  { static const bool value { true }; };
+  template <> struct is_integer_like<int32_t>  { static const bool value { true }; };
+  template <> struct is_integer_like<int64_t>  { static const bool value { true }; };
+  template <> struct is_integer_like<uint8_t>  { static const bool value { true }; };
+  template <> struct is_integer_like<uint16_t> { static const bool value { true }; };
+  template <> struct is_integer_like<uint32_t> { static const bool value { true }; };
+  template <> struct is_integer_like<uint64_t> { static const bool value { true }; };
 	
 	
   // For any integer types `T` and `U`, if the minimum and maximum values of `T` are

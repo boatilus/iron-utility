@@ -16,11 +16,20 @@
     <Filter Include="Test Files">
       <UniqueIdentifier>{20c1d459-486b-47d9-8374-3c14ddf26063}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Documentation">
+      <UniqueIdentifier>{409db58e-2374-459a-97f2-50d32917d415}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
     <None Include="LICENSE.md" />
     <None Include="README.md" />
+    <None Include="docs\have_same_signedness.md">
+      <Filter>Documentation</Filter>
+    </None>
+    <None Include="docs\is_integer_like.md">
+      <Filter>Documentation</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utility.h">
@@ -37,9 +46,6 @@
     <ClCompile Include="test\has_same_signedness.cpp">
       <Filter>Test Files</Filter>
     </ClCompile>
-    <ClCompile Include="test\is_integral_like.cpp">
-      <Filter>Test Files</Filter>
-    </ClCompile>
     <ClCompile Include="test\has_eq_or_greater_range.cpp">
       <Filter>Test Files</Filter>
     </ClCompile>
@@ -47,6 +53,18 @@
       <Filter>Test Files</Filter>
     </ClCompile>
     <ClCompile Include="test\smallest_integer.cpp">
+      <Filter>Test Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\has_char_traits.cpp">
+      <Filter>Test Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\traits.cpp">
+      <Filter>Test Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\width_as_integer.cpp">
+      <Filter>Test Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\is_integer_like.cpp">
       <Filter>Test Files</Filter>
     </ClCompile>
   </ItemGroup>
