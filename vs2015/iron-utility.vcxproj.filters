@@ -24,48 +24,48 @@
     <None Include=".gitignore" />
     <None Include="LICENSE.md" />
     <None Include="README.md" />
-    <None Include="docs\have_same_signedness.md">
+    <None Include="..\docs\have_same_signedness.md">
       <Filter>Documentation</Filter>
     </None>
-    <None Include="docs\is_integer_like.md">
+    <None Include="..\docs\is_integer_like.md">
       <Filter>Documentation</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="utility.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="deps\catch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="..\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="test\has_same_signedness.cpp">
+    <ClCompile Include="..\test\has_char_traits.cpp">
       <Filter>Test Files</Filter>
     </ClCompile>
-    <ClCompile Include="test\has_eq_or_greater_range.cpp">
+    <ClCompile Include="..\test\has_eq_or_greater_range.cpp">
       <Filter>Test Files</Filter>
     </ClCompile>
-    <ClCompile Include="test\safe_to_int.cpp">
+    <ClCompile Include="..\test\have_same_signedness.cpp">
       <Filter>Test Files</Filter>
     </ClCompile>
-    <ClCompile Include="test\smallest_integer.cpp">
+    <ClCompile Include="..\test\is_integer_like.cpp">
       <Filter>Test Files</Filter>
     </ClCompile>
-    <ClCompile Include="test\has_char_traits.cpp">
+    <ClCompile Include="..\test\safe_to_int.cpp">
       <Filter>Test Files</Filter>
     </ClCompile>
-    <ClCompile Include="test\traits.cpp">
+    <ClCompile Include="..\test\smallest_integer.cpp">
       <Filter>Test Files</Filter>
     </ClCompile>
-    <ClCompile Include="test\width_as_integer.cpp">
+    <ClCompile Include="..\test\traits.cpp">
       <Filter>Test Files</Filter>
     </ClCompile>
-    <ClCompile Include="test\is_integer_like.cpp">
+    <ClCompile Include="..\test\width_as_integer.cpp">
       <Filter>Test Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\deps\catch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

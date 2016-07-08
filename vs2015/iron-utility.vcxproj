@@ -268,26 +268,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\docs\have_same_signedness.md" />
+    <None Include="..\docs\is_integer_like.md" />
     <None Include=".gitignore" />
-    <None Include="docs\have_same_signedness.md" />
-    <None Include="docs\is_integer_like.md" />
     <None Include="LICENSE.md" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="deps\catch.h" />
-    <ClInclude Include="utility.h" />
+    <ClCompile Include="..\main.cpp" />
+    <ClCompile Include="..\test\has_char_traits.cpp" />
+    <ClCompile Include="..\test\has_eq_or_greater_range.cpp" />
+    <ClCompile Include="..\test\have_same_signedness.cpp" />
+    <ClCompile Include="..\test\is_integer_like.cpp" />
+    <ClCompile Include="..\test\safe_to_int.cpp" />
+    <ClCompile Include="..\test\smallest_integer.cpp" />
+    <ClCompile Include="..\test\traits.cpp" />
+    <ClCompile Include="..\test\width_as_integer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="test\has_char_traits.cpp" />
-    <ClCompile Include="test\has_eq_or_greater_range.cpp" />
-    <ClCompile Include="test\has_same_signedness.cpp" />
-    <ClCompile Include="test\is_integer_like.cpp" />
-    <ClCompile Include="test\safe_to_int.cpp" />
-    <ClCompile Include="test\smallest_integer.cpp" />
-    <ClCompile Include="test\traits.cpp" />
-    <ClCompile Include="test\width_as_integer.cpp" />
+    <ClInclude Include="..\deps\catch.h" />
+    <ClInclude Include="..\utility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
