@@ -25,13 +25,13 @@ namespace iron {
   // Integral type traits //
   //////////////////////////
 
-	template <typename T, typename U>
-	struct have_same_signedness {
-		static const bool value {
-			   (std::is_signed<T>::value && std::is_signed<U>::value)
-	    || (std::is_unsigned<T>::value && std::is_unsigned<U>::value)
-		};
-	};
+  template <typename T, typename U>
+  struct have_same_signedness {
+    static const bool value {
+         (std::is_signed<T>::value && std::is_signed<U>::value)
+      || (std::is_unsigned<T>::value && std::is_unsigned<U>::value)
+    };
+  };
 
 
   template <typename T> struct is_integer_like { static const bool value { false }; };
@@ -43,26 +43,26 @@ namespace iron {
   template <> struct is_integer_like<uint16_t> { static const bool value { true }; };
   template <> struct is_integer_like<uint32_t> { static const bool value { true }; };
   template <> struct is_integer_like<uint64_t> { static const bool value { true }; };
-	
-	
+  
+  
   // For any integer types `T` and `U`, if the minimum and maximum values of `T` are
   // greater than those of `U`, the boolean `::value` will be `true`
-	template <typename T, typename U>
-	struct has_eq_or_greater_range {
-		static const bool value {
-			   std::numeric_limits<T>::min() <= std::numeric_limits<U>::min()
-			&& std::numeric_limits<T>::max() >= std::numeric_limits<U>::max()
-		};
-	};
+  template <typename T, typename U>
+  struct has_eq_or_greater_range {
+    static const bool value {
+         std::numeric_limits<T>::min() <= std::numeric_limits<U>::min()
+      && std::numeric_limits<T>::max() >= std::numeric_limits<U>::max()
+    };
+  };
 
 
   template <typename T, typename U>
-	struct has_equivalent_range {
-		static const bool value {
-			   std::numeric_limits<T>::min() <= std::numeric_limits<U>::min()
-			&& std::numeric_limits<T>::max() >= std::numeric_limits<U>::max()
-		};
-	};
+  struct has_equivalent_range {
+    static const bool value {
+         std::numeric_limits<T>::min() <= std::numeric_limits<U>::min()
+      && std::numeric_limits<T>::max() >= std::numeric_limits<U>::max()
+    };
+  };
   
   
   // Given an integral `width` (number of bits), return the associated integer type with the
@@ -157,10 +157,10 @@ namespace iron {
   };
 
 
-	template <typename T, typename U>
-	struct has_same_char_traits {
-		static const bool value { std::is_same<typename T::traits_type, typename U::traits_type>::value };
-	};
+  template <typename T, typename U>
+  struct has_same_char_traits {
+    static const bool value { std::is_same<typename T::traits_type, typename U::traits_type>::value };
+  };
   
   
   // `enable_if` type that ensures `T` has a `traits_type` type == `traits` argument
@@ -170,11 +170,11 @@ namespace iron {
   >::type;
 
 
-	// `enable_if` type that ensures `T` and `U` have the same `traits_type` type
-	template <typename T, typename U, typename V = void>
-	using has_same_char_traits_t = typename std::enable_if<
-		std::is_same<typename T::traits_type, typename U::traits_type>::value, V
-	>::type;
+  // `enable_if` type that ensures `T` and `U` have the same `traits_type` type
+  template <typename T, typename U, typename V = void>
+  using has_same_char_traits_t = typename std::enable_if<
+    std::is_same<typename T::traits_type, typename U::traits_type>::value, V
+  >::type;
 
 
    /////////////////////////////////
