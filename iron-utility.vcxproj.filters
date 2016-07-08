@@ -35,7 +35,7 @@
     <ClInclude Include="utility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="lib\catch.h">
+    <ClInclude Include="deps\catch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

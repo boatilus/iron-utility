@@ -1,6 +1,6 @@
 #include <string>
 
-#include "../lib/catch.h"
+#include "../deps/catch.h"
 #include "../utility.h"
 
 

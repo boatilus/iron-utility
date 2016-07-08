@@ -275,7 +275,7 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lib\catch.h" />
+    <ClInclude Include="deps\catch.h" />
     <ClInclude Include="utility.h" />
   </ItemGroup>
   <ItemGroup>

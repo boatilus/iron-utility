@@ -1,4 +1,6 @@
-#include "../lib/catch.h"
+#include <functional>
+
+#include "../deps/catch.h"
 #include "../utility.h"
 
 
