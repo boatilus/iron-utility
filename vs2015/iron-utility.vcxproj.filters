@@ -21,15 +21,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include=".gitignore" />
-    <None Include="LICENSE.md" />
-    <None Include="README.md" />
     <None Include="..\docs\have_same_signedness.md">
       <Filter>Documentation</Filter>
     </None>
     <None Include="..\docs\is_integer_like.md">
       <Filter>Documentation</Filter>
     </None>
+    <None Include="..\.gitignore" />
+    <None Include="..\LICENSE.md" />
+    <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\main.cpp">
