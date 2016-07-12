@@ -2,7 +2,7 @@
 #include "../utility.h"
 
 
-TEST_CASE("all built-in integers are integral-like") {
+TEST_CASE("all built-in integers are integer-like") {
   using namespace iron;
 
   REQUIRE(is_integer_like<int8_t>::value);
@@ -15,7 +15,7 @@ TEST_CASE("all built-in integers are integral-like") {
   REQUIRE(is_integer_like<uint64_t>::value);
 }
 
-TEST_CASE("floats aren't integral-like") {
+TEST_CASE("floats aren't integer-like") {
   using namespace iron;
 
   REQUIRE(!is_integer_like<float>::value);
