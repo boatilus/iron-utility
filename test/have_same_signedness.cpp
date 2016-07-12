@@ -42,7 +42,7 @@ TEST_CASE("has_samed_signedness returns true for same-signed ints") {
 
 TEST_CASE("has_samed_signedness returns false for differently-signed ints") {
   using namespace iron;
-  
+
   REQUIRE(!(have_same_signedness<int8_t, uint8_t>::value));
   REQUIRE(!(have_same_signedness<int8_t, uint16_t>::value));
   REQUIRE(!(have_same_signedness<int8_t, uint32_t>::value));
