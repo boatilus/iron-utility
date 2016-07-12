@@ -15,7 +15,7 @@
 		E488DF261D332A5200243A4D /* smallest_integer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E488DF1E1D332A5200243A4D /* smallest_integer.cpp */; };
 		E488DF271D332A5200243A4D /* traits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E488DF1F1D332A5200243A4D /* traits.cpp */; };
 		E488DF281D332A5200243A4D /* width_as_integer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E488DF201D332A5200243A4D /* width_as_integer.cpp */; };
-		E488DF2F1D332A6600243A4D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E488DF2B1D332A6600243A4D /* main.cpp */; };
+		E488DF321D3482FC00243A4D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E488DF311D3482FC00243A4D /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,9 +42,9 @@
 		E488DF201D332A5200243A4D /* width_as_integer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = width_as_integer.cpp; path = ../test/width_as_integer.cpp; sourceTree = "<group>"; };
 		E488DF291D332A6600243A4D /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		E488DF2A1D332A6600243A4D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		E488DF2B1D332A6600243A4D /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../main.cpp; sourceTree = "<group>"; };
 		E488DF2C1D332A6600243A4D /* utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utility.h; path = ../utility.h; sourceTree = "<group>"; };
 		E488DF301D332A8200243A4D /* catch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = catch.h; path = ../deps/catch.h; sourceTree = "<group>"; };
+		E488DF311D3482FC00243A4D /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../test/main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,6 @@
 			children = (
 				E488DF291D332A6600243A4D /* LICENSE.md */,
 				E488DF2A1D332A6600243A4D /* README.md */,
-				E488DF2B1D332A6600243A4D /* main.cpp */,
 				E488DF2C1D332A6600243A4D /* utility.h */,
 				E436FD701D1B8D6100D2B0F2 /* Deps */,
 				E436FD6C1D1B71BF00D2B0F2 /* Tests */,
@@ -83,6 +82,7 @@
 		E436FD6C1D1B71BF00D2B0F2 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E488DF311D3482FC00243A4D /* main.cpp */,
 				E488DF191D332A5200243A4D /* has_char_traits.cpp */,
 				E488DF1A1D332A5200243A4D /* has_eq_or_greater_range.cpp */,
 				E488DF1B1D332A5200243A4D /* have_same_signedness.cpp */,
@@ -161,7 +161,7 @@
 			files = (
 				E488DF231D332A5200243A4D /* have_same_signedness.cpp in Sources */,
 				E488DF261D332A5200243A4D /* smallest_integer.cpp in Sources */,
-				E488DF2F1D332A6600243A4D /* main.cpp in Sources */,
+				E488DF321D3482FC00243A4D /* main.cpp in Sources */,
 				E488DF271D332A5200243A4D /* traits.cpp in Sources */,
 				E488DF251D332A5200243A4D /* safe_to_int.cpp in Sources */,
 				E488DF241D332A5200243A4D /* is_integer_like.cpp in Sources */,
