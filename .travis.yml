@@ -16,5 +16,12 @@ matrix:
           sources: ['ubuntu-toolchain-r-test']
           packages: ['g++-6']
       env: VER=6
+    - os: linux
+      compiler: gcc
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-5']
+      env: VER=5
 
 script: cd test && make && make test
