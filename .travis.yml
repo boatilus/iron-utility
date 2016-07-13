@@ -8,9 +8,13 @@ matrix:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.8']
           packages: ['clang-3.8']
-      env: COMPILER=clang++-3.8
+      env: VER=3.8
+    - os: linux
+      compiler: gcc
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-6.1']
+      env: VER=6.1
 
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -y libopencv-dev
-script: cd test && make CXX=$COMPILER && make test
+script: cd test && make && make test
