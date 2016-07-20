@@ -30,11 +30,10 @@
     <None Include="..\.gitignore" />
     <None Include="..\LICENSE.md" />
     <None Include="..\README.md" />
+    <None Include="..\.gitattributes" />
+    <None Include="..\.travis.yml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\test\has_char_traits.cpp">
       <Filter>Test Files</Filter>
     </ClCompile>

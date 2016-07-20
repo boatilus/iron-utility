@@ -268,14 +268,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\.gitattributes" />
     <None Include="..\.gitignore" />
+    <None Include="..\.travis.yml" />
     <None Include="..\docs\have_same_signedness.md" />
     <None Include="..\docs\is_integer_like.md" />
     <None Include="..\LICENSE.md" />
     <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\test\has_char_traits.cpp" />
     <ClCompile Include="..\test\has_eq_or_greater_range.cpp" />
     <ClCompile Include="..\test\have_same_signedness.cpp" />
