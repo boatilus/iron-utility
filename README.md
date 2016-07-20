@@ -9,7 +9,7 @@ Download [`utility.h`](https://github.com/boatilus/iron-utility/blob/master/util
 Requires a roughly-compliant C++14 compiler and STL, as `std::enable_if_t` support is required (but this can be easily worked around). Visual Studio 2015's MSVC++ compiler works fine and passes all tests. The version of Clang included with Xcode 7.3 is known to work (with the `-std=c++14` flag specified), as well as the Clang 3.8 release. GCC 5.x is good to go also.
 
 ## Docs
-Full documentation is available at <https://boatilus.gitbooks.io/iron-utility/content>, generated directly from files within this repository's [`docs` directory](https://github.com/boatilus/iron-utility/blob/master/docs/).
+Work-in-progress documentation is available at <https://boatilus.gitbooks.io/iron-utility/content>, generated from Markdown files within this repository's [`docs` directory](https://github.com/boatilus/iron-utility/blob/master/docs/).
 
 ## Contributing
 Contributions are welcome. For major changes, please file an issue with the !feature tag before submitting a pull request.
