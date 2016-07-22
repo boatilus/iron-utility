@@ -1,5 +1,7 @@
 # iron-utility
 
+[![Build Status](https://travis-ci.org/boatilus/iron-utility.svg?branch=master)](https://travis-ci.org/boatilus/iron-utility) [![Build status](https://ci.appveyor.com/api/projects/status/4s8qvh1kh3fghwr9?svg=true)](https://ci.appveyor.com/project/boatilus/iron-utility)
+
 **iron-utility** is a collection of (potentially) useful type-oriented utilities for C++ as a header-only library, most applicable to SFINAE/enable_if template metaprogramming.
 
 ## Installation
