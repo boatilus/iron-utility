@@ -8,4 +8,4 @@ platform:
 build:
   verbosity: minimal
 test_script:
-- cmd: cd C:\projects\iron-utility\vs2015\{platform}\{configuration} && iron-utility.exe
+- cmd: cd C:\projects\iron-utility\vs2015\%PLATFORM%\%CONFIGURATION% && iron-utility.exe
