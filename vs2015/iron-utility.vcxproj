@@ -281,6 +281,7 @@
     <None Include="..\.gitattributes" />
     <None Include="..\.gitignore" />
     <None Include="..\.travis.yml" />
+    <None Include="..\docs\has_eq_or_greater_range.md" />
     <None Include="..\docs\have_same_signedness.md" />
     <None Include="..\docs\is_integer_like.md" />
     <None Include="..\LICENSE.md" />

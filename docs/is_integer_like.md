@@ -14,7 +14,7 @@ struct wrapped_integer {
   int value;
 }
 
-template <> struct iron::is_integer_like<a> { static const bool value { true }; };
+template <> struct iron::is_integer_like<wrapped_integer> { static const bool value { true }; };
 
 constexpr bool truthy { iron::is_integer_like<a>::value };  // true
 ```
