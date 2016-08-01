@@ -96,6 +96,14 @@ namespace iron {
   template <> struct safe_to_int<uint8_t>   { using type = int16_t; };
   template <> struct safe_to_int<uint16_t>  { using type = int32_t; };
   template <> struct safe_to_int<uint32_t>  { using type = int64_t; };
+
+  // Given a signed integral type `T`, `::type` will be equal to unsigned integer type capable of
+  // representing T_MAX, but not T_MIN
+  template <typename T> struct safe_to_unsigned {};
+  template <> struct safe_to_unsigned<int8_t>  { using type = uint8_t; };
+  template <> struct safe_to_unsigned<int16_t> { using type = uint16_t; };
+  template <> struct safe_to_unsigned<int32_t> { using type = uint32_t; };
+  template <> struct safe_to_unsigned<int64_t> { using type = uint64_t; };
   
   
   ///////////////////////////
@@ -185,11 +193,11 @@ namespace iron {
   struct all_arithmetic;
   
   template <typename T>
-  struct all_arithmetic<T> { static const auto value { std::is_arithmetic<T>::value }; };
+  struct all_arithmetic<T> { static const auto value = std::is_arithmetic<T>::value; };
 
   template <typename T, typename... Ts>
   struct all_arithmetic<T, Ts...> {
-    static const auto value { std::is_arithmetic<T>::value && all_arithmetic<Ts...>::value };
+    static const auto value = std::is_arithmetic<T>::value && all_arithmetic<Ts...>::value;
   };
   
   
@@ -197,11 +205,11 @@ namespace iron {
   struct all_integral;
   
   template <typename T>
-  struct all_integral<T> { static const auto value { std::is_integral<T>::value }; };
+  struct all_integral<T> { static const auto value = std::is_integral<T>::value; };
 
   template <typename T, typename... Ts>
   struct all_integral<T, Ts...> {
-    static const auto value { std::is_integral<T>::value && all_integral<Ts...>::value };
+    static const auto value = std::is_integral<T>::value && all_integral<Ts...>::value;
   };
   
 
@@ -209,11 +217,11 @@ namespace iron {
   struct all_signed;
   
   template <typename T>
-  struct all_signed<T> { static const auto value { std::is_signed<T>::value }; };
+  struct all_signed<T> { static const auto value = std::is_signed<T>::value; };
 
   template <typename T, typename... Ts>
   struct all_signed<T, Ts...> {
-    static const auto value { std::is_signed<T>::value && all_signed<Ts...>::value };
+    static const auto value = std::is_signed<T>::value && all_signed<Ts...>::value;
   };
   
   
@@ -221,11 +229,11 @@ namespace iron {
   struct all_unsigned;
   
   template <typename T>
-  struct all_unsigned<T> { static const bool value { std::is_unsigned<T>::value }; };
+  struct all_unsigned<T> { static const bool value = std::is_unsigned<T>::value; };
 
   template <typename T, typename... Ts>
   struct all_unsigned<T, Ts...> {
-    static const bool value { std::is_unsigned<T>::value && all_unsigned<Ts...>::value };
+    static const bool value = std::is_unsigned<T>::value && all_unsigned<Ts...>::value;
   };
   
   
@@ -233,11 +241,11 @@ namespace iron {
   struct all_floating_point;
   
   template <typename T>
-  struct all_floating_point<T> { static const bool value { std::is_floating_point<T>::value }; };
+  struct all_floating_point<T> { static const bool value = std::is_floating_point<T>::value; };
 
   template <typename T, typename... Ts>
   struct all_floating_point<T, Ts...> {
-    static const bool value { std::is_floating_point<T>::value && all_floating_point<Ts...>::value };
+    static const bool value = std::is_floating_point<T>::value && all_floating_point<Ts...>::value;
   };
   
   
